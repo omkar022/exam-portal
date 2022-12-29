@@ -28,10 +28,10 @@ export class InstructionsComponent implements OnInit {
   startQuiz() {
     Swal.fire({
       title: 'Do you want to start the quiz?',
-      showDenyButton: true,
+      // showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: 'Start',
-      denyButtonText: `No`,
+      // denyButtonText: `No`,
       icon: 'info'
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
@@ -39,12 +39,12 @@ export class InstructionsComponent implements OnInit {
         this.route.navigate(['/start/' + this.qid]);
       }
 
-      if (result.isConfirmed) {
-        Swal.fire('Starting!', '', 'warning')
-      }
-      else if (result.isDenied) {
-        Swal.fire('Denied', '', 'info')
-      }
+      // if (result.isConfirmed) {
+      //   Swal.fire('Starting!', '', 'warning')
+      // }
+      // else if (result.isDenied) {
+      //   Swal.fire('Denied', '', 'info')
+      // }
     })
   }
 }
