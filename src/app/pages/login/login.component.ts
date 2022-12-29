@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -10,10 +10,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginData = {
-    username: '',
-    password: '',
-  };
+  loginData =
+    {
+      username: '',
+      password: '',
+    };
   constructor(private snack: MatSnackBar, private login: LoginService, private router: Router) { }
 
   ngOnInit(): void {
@@ -42,12 +43,14 @@ export class LoginComponent implements OnInit {
         this.login.setUser(user);
         console.log(user);
 
-        if (this.login.getUserRole() == "ADMIN") {
+        if (this.login.getUserRole() == "Admin") {
           // window.location.href = '/admin';
-          this.router.navigate(['admin'])
-        } else if (this.login.getUserRole() == "NORMAL") {
+          this.router.navigate(['admin']);
+          this.login.loginStatusSubject.next(true);
+        } else if (this.login.getUserRole() == "Normal") {
           // window.location.href = '/user-dashboard';
-          this.router.navigate(['user-dashboard'])
+          this.router.navigate(['user-dashboard/0'])
+          this.login.loginStatusSubject.next(true);
         } else {
           this.login.logOut();
 

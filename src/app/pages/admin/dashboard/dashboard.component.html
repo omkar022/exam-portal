@@ -1,10 +1,13 @@
 <div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row mt20">
-            <div class="col-md-6 offset-md-3 text text-center">
-                <h1>Welcome</h1>
-                <button mat-raised-button color="accent">HomePage</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-10">
+                <router-outlet></router-outlet>
             </div>
         </div>
     </div>
+
 </div>

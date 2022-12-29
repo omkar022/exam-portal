@@ -18,9 +18,9 @@
         aria-label="Example icon-button with heart icon">
         Logout
     </a>
-    <button *ngIf="login.isLoggedIn()" class="example-icon favorite-icon ml20"
-        aria-label="Example icon-button with heart icon">
-        {{login.getUser().username}}
+    <button *ngIf="login.isLoggedIn()" routerLink="/admin/profile" class="example-icon favorite-icon ml20"
+        aria-label="Example icon-button with heart icon" mat-button>
+        {{ login.getUser().username}}
     </button>
 
 </mat-toolbar>

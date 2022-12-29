@@ -1,0 +1,52 @@
+<mat-card *ngIf="user">
+    <h3>Your Profile Details</h3>
+
+    <mat-card-content>
+        Profile Details
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="data:image/png;base64,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"
+                        alt="" class="profile-image">
+                    <h1 class="mt20">{{user.firstname}} {{user.lastname}}</h1>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>userid</td>
+                                <td>Exam{{user.id}}</td>
+                            </tr>
+                            <!-- <tr *ngIf="user.phone"> -->
+                            <tr>
+                                <td>phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>{{user.enabled?"Active":"NotActive"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="accent">Share</button>
+    </mat-card-actions>
+</mat-card>
